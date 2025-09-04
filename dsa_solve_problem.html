@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Problem</title>
+    <link rel="stylesheet" href="dsa_styles.css"> <!-- same CSS as home -->
+    <script src="dsa_solve_problem_script.js" defer></script> <!-- JS for dropdowns & backend -->
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (reuse from home) -->
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="menu-item"><a href="index.html">Home</a></li>
+                <li class="menu-item active"><a href="solve_problem.html">Solve Problem</a></li>
+                <li class="menu-item"><a href="solved_problems.html">Solved Problems</a></li>
+                <!-- add other menu items here -->
+            </ul>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <h1>Solve Problem</h1>
+
+            <!-- Dropdown: Problem Type -->
+            <label for="problem-type">Select Problem Type:</label>
+            <select id="problem-type">
+                <option value="book">Book Problem</option>
+                <option value="real-world">Real World Scenario</option>
+            </select>
+
+            <!-- Dropdown: DSA Topics -->
+            <label for="dsa-topic">Select DSA Topic:</label>
+            <select id="dsa-topic">
+                <option value="arrays">Arrays</option>
+                <option value="linked-list">Linked List</option>
+                <option value="stack">Stack</option>
+                <option value="queue">Queue</option>
+                <option value="trees">Trees</option>
+                <option value="graphs">Graphs</option>
+                <option value="hashing">Hashing</option>
+                <option value="dynamic-programming">Dynamic Programming</option>
+                <option value="greedy">Greedy</option>
+                <option value="backtracking">Backtracking</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button id="get-problem-btn">Get Problem</button>
+
+            <!-- Problem Description -->
+            <div id="problem-description">
+                <!-- Backend response will be inserted here -->
+            </div>
+        </main>
+
+        <!-- Right Sidebar Chat Bot -->
+        <div class="right-sidebar" id="chat-sidebar">
+            <button id="toggle-chat">Toggle Chat</button>
+            <div class="chat-content">
+                <div id="chat-output"></div>
+                <input type="text" id="chat-input" placeholder="Ask something...">
+                <button id="send-chat">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
