@@ -45,3 +45,8 @@ function navigate(page) {
 function logout() {
   alert("Logged out! (placeholder)");
 }
+
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('collapsed');
+}

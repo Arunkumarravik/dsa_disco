@@ -36,3 +36,21 @@ document.getElementById('send-chat').addEventListener('click', async () => {
     chatOutput.innerHTML += `<div class="chat-msg bot">Bot: ${data.answer}</div>`;
     document.getElementById('chat-input').value = '';
 });
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('collapsed');
+}
+function togglerightSidebar() {
+ const sidebar = document.querySelector('.right-sidebar');
+const button = document.querySelector('.toggle-chat');
+
+    // Toggle the sidebar visibility
+sidebar.classList.toggle('hidden');
+
+    // Change button text based on sidebar state
+if (sidebar.classList.contains('hidden')) {
+    button.innerHTML = 'Open Chat';
+} else {
+        button.innerHTML = 'Close Chat';
+    }
+}

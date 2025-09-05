@@ -6,60 +6,59 @@
   <link rel="stylesheet" href="dsa_styles.css">
 </head>
 <body>
-  <div class="container">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="logo">Dsa <3 Disco</div>
-      <nav>
-        <ul class="sidebar-menu">
-        <li class="menu-item active"><a href="dsa_home.html".html">Home</a></li>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
+    <nav>
+      <ul class="sidebar-menu">
+        <li class="menu-item active"><a href="dsa_home.html">Home</a></li>
         <li class="menu-item"><a href="dsa_solve_problem.html">Solve Problem</a></li>
         <li class="menu-item"><a href="solved_problems.html">Solved Problems</a></li>
         <li class="menu-item"><a href="problem_list.html">Problems List</a></li>
-        </ul>
+      </ul>
+    </nav>
+  </aside>
 
-      </nav>
-    </aside>
+  <!-- Main Content -->
+  <main class="main-content" id="main-content">
+    <!-- Topbar -->
+    <header class="topbar">
+      <span class="logo">DSA <3 Disco</span>
+      <button onclick="navigate('profile')">Profile</button>
+      <button onclick="navigate('stats')">My Stats</button>
+      <button onclick="logout()">Log Out</button>
+    </header>
 
-    <!-- Main Content -->
-    <main style="flex: 1; display: flex; flex-direction: column;">
-      
-      <!-- Topbar -->
-      <header class="topbar">
-        <button onclick="navigate('profile')">Profile</button>
-        <button onclick="navigate('stats')">My Stats</button>
-        <button onclick="logout()">Log Out</button>
-      </header>
+    <!-- Center Content -->
+    <section class="center" id="content">
+      <div class="quote-box">
+        "Placeholder for motivational quote..."
+      </div>
+      <button class="solve-btn" onclick="navigate('solve_problem')">Solve Problem</button>
 
-      <!-- Center Content -->
-      <section class="center" id="content">
-        <div class="quote-box">
-          "Placeholder for motivational quote..."
-        </div>
-        <button class="solve-btn" onclick="navigate('solve_problem')">Solve Problem</button>
-
-        <h2 class="recent-title">Problems Solved Last Week</h2>
-        <table class="recent-table">
-          <thead>
-            <tr>
-              <th>Problem Name</th>
-              <th>Date Solved</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="solved-placeholder">
-            <!-- Placeholder for backend data -->
-            <tr>
-              <td colspan="3" style="text-align:center; color:gray;">
-                (Solved problems will appear here from backend)
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-  </div>
+      <h2 class="recent-title">Problems Solved Last Week</h2>
+      <table class="recent-table">
+        <thead>
+          <tr>
+            <th>Problem Name</th>
+            <th>Date Solved</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="solved-placeholder">
+          <!-- Placeholder for backend data -->
+          <tr>
+            <td colspan="3" style="text-align:center; color:gray;">
+              (Solved problems will appear here from backend)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
   <script src="dsa_js.js"></script>
 </body>

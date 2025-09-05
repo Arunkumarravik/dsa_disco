@@ -8,17 +8,22 @@
     <script src="dsa_solve_problem_script.js" defer></script> <!-- JS for dropdowns & backend -->
 </head>
 <body>
-    <div class="container">
+     <div class="container"></div>
         <!-- Sidebar (reuse from home) -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            </div>
+            <nav>
             <ul class="sidebar-menu">
-                <li class="menu-item"><a href="index.html">Home</a></li>
-                <li class="menu-item active"><a href="solve_problem.html">Solve Problem</a></li>
+                <li class="menu-item active"><a href="dsa_home.html">Home</a></li>
+                <li class="menu-item"><a href="dsa_solve_problem.html">Solve Problem</a></li>
                 <li class="menu-item"><a href="solved_problems.html">Solved Problems</a></li>
-                <!-- add other menu items here -->
+                <li class="menu-item"><a href="problem_list.html">Problems List</a></li>
             </ul>
+            </nav>
         </aside>
-
+    
         <!-- Main content -->
         <main class="main-content">
             <h1>Solve Problem</h1>
@@ -55,8 +60,8 @@
         </main>
 
         <!-- Right Sidebar Chat Bot -->
+        <button class="toggle-chat" onclick="togglerightSidebar()">open Chat</button>
         <div class="right-sidebar" id="chat-sidebar">
-            <button id="toggle-chat">Toggle Chat</button>
             <div class="chat-content">
                 <div id="chat-output"></div>
                 <input type="text" id="chat-input" placeholder="Ask something...">
