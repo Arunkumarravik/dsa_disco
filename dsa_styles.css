@@ -243,6 +243,11 @@ main {
 .main-content {
     flex: 1;
     padding: 2rem;
+    display: flex;
+     margin-left: 250px; /* same as sidebar width */
+    transition: margin-left 0.3s;
+    padding-left : 100px;
+    padding-bottom: 100px;
 }
 
 .main-content label {
@@ -250,6 +255,7 @@ main {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    
 }
 
 .main-content select {
@@ -345,3 +351,39 @@ main {
     color: var(--tree-brown);
 }
 
+#code-editor{
+  height: 200px;
+}
+
+/* Inline buttons */
+.code-buttons button {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Tabs */
+.code-tabs button {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+.code-tabs button.active {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+/* Tab panels */
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+    padding-bottom: 100px;
+}

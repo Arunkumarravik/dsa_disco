@@ -54,3 +54,20 @@ if (sidebar.classList.contains('hidden')) {
         button.innerHTML = 'Close Chat';
     }
 }
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+
+        // Remove active from all buttons and panels
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+        // Activate clicked button & corresponding panel
+        btn.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+    });
+});
+
+
