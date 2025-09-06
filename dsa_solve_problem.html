@@ -26,8 +26,7 @@
             });
         });
     </script>
-
-    <script src="dsa_solve_problem_script.js" defer></script>
+<script src="dsa_solve_problem_script.js" defer></script>
 </head>
 <body>
     <aside class="sidebar" id="sidebar">
@@ -80,26 +79,23 @@
             <button id="run-code-btn">Run Code</button>
             <button id="submit-code-btn">Submit Code</button>
         </div>
-
         <!-- Tabs: Sample Test Case / Test Result -->
-        <div class="code-tabs" style="margin-top: 20px;">
-            <button class="tab-btn active" data-tab="sample-test">Sample Test Case</button>
-            <button class="tab-btn" data-tab="test-result">Test Result</button>
+       <div class="code-tabs">
+        <button class="tab-btn active" data-tab="sample-test">Sample Test Case</button>
+        <button class="tab-btn" data-tab="test-result">Test Result</button>
         </div>
 
-        <!-- Tab Content -->
+        <!-- Tab Panels -->
         <div class="tab-content">
-            <div id="sample-test" class="tab-panel active" style="border:1px solid #ccc; padding:10px; margin-top:10px;">
-                <!-- Sample test case will appear here -->
-                Sample Test Case Output...
-            </div>
-            <div id="test-result" class="tab-panel" style="border:1px solid #ccc; padding:10px; margin-top:10px; display:none;">
-                <!-- Test result will appear here -->
-                Test Result Output...
-            </div>
+        <div id="sample-test" class="tab-panel active">
+            Sample Test Case Output...
         </div>
-
-    </main>
+        <div id="test-result" class="tab-panel">
+            Test Result Output...
+        </div>
+        </div>
+</main>
+    
 
 
     <button class="toggle-chat" onclick="togglerightSidebar()">Close Chat</button>
@@ -110,5 +106,29 @@
             <button id="send-chat">Send</button>
         </div>
     </div>
+
 </body>
+<script>
+  const sampleBtn = document.querySelector('[data-tab="sample-test"]');
+  const resultBtn = document.querySelector('[data-tab="test-result"]');
+  const samplePanel = document.getElementById("sample-test");
+  const resultPanel = document.getElementById("test-result");
+
+  sampleBtn.addEventListener("click", () => {
+    sampleBtn.classList.add("active");
+    samplePanel.classList.add("active");
+
+    resultBtn.classList.remove("active");
+    resultPanel.classList.remove("active");
+  });
+
+  resultBtn.addEventListener("click", () => {
+    resultBtn.classList.add("active");
+    resultPanel.classList.add("active");
+
+    sampleBtn.classList.remove("active");
+    samplePanel.classList.remove("active");
+  });
+</script>
+
 </html>

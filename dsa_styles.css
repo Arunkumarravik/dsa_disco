@@ -344,7 +344,7 @@ main {
 }
 
 .chat-msg.bot {
-    color: rgb(171, 53, 53);
+    background-color: #e75151;
 }
 
 .chat-msg.user {
@@ -361,29 +361,36 @@ main {
     margin-right: 10px;
     padding: 8px 16px;
     cursor: pointer;
+    background-color: #e75151;
 }
 
 /* Tabs */
+.code-tabs {
+      margin-top: 20px;
+    }
+
 .code-tabs button {
-    display: inline-block;
-    padding: 8px 16px;
-    margin-right: 5px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-}
+      display: inline-block;
+      padding: 8px 16px;
+      margin-right: 5px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
 
 .code-tabs button.active {
-    background-color: #e0e0e0;
-    font-weight: bold;
-}
+      background-color: #6fb124;
+      font-weight: bold;
+    }
 
-/* Tab panels */
+    /* Tab panels */
 .tab-panel {
-    display: none;
-}
-
+      display: none;
+      border: 1px solid #26ba30;
+      padding: 10px;
+      margin-top: 10px;
+    }
 .tab-panel.active {
-    display: block;
-    padding-bottom: 100px;
-}
+      display: block;
+      padding-bottom: 100px;
+    }
