@@ -349,7 +349,7 @@ main {
 
 .chat-msg.user {
     color: var(--tree-brown);
-}
+}  
 
 #code-editor{
   height: 200px;
