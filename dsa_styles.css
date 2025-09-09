@@ -351,10 +351,6 @@ main {
     color: var(--tree-brown);
 }  
 
-#code-editor{
-  height: 200px;
-}
-
 /* Inline buttons */
 .code-buttons button {
     display: inline-block;
@@ -394,3 +390,61 @@ main {
       display: block;
       padding-bottom: 100px;
     }
+
+  .problem-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  margin-top: 12px;
+  border-radius: 8px;
+  background: #fafafa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.problem-row span {
+  font-weight: 600;
+  font-size: 16px;
+  color: #2e3b4e;
+}
+
+.solve-btn {
+  background: #2e8b57;       /* Green */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.solve-btn:hover {
+  background: #256d45;       /* Darker green */
+  transform: translateY(-2px);
+}
+
+.solve-btn:active {
+  transform: scale(0.96);
+}
+
+
+#problem-desc{
+ min-height:150px; border:1px solid #ccc; padding:10px; overflow-y:auto; white-space:pre-wrap;
+
+}
+#code-editor {
+  position: relative;
+  z-index: 5; /* ensure it's above buttons/tabs */
+}
+
+.CodeMirror {
+  height: 100% !important;
+  min-height: 400px;
+  font-size: 14px;
+  background: #fff;
+  position: relative;
+  z-index: 10; /* ensures editor stays above everything */
+}

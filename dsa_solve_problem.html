@@ -66,34 +66,16 @@
             <option value="backtracking">Backtracking</option>
         </select>
 
+        <label for="problem-difficulty">Difficulty:</label>
+        <select id="problem-difficulty">
+            <option value="beginner">Easy</option>
+            <option value="basic">basic</option>
+            <option value="intermediate">medium</option>
+            <option value="Expert">advanced</option>
+        </select>
+
         <button id="get-problem-btn">Get Problem</button>
-
-        <div id="problem-description" style="border: 1px solid #ccc; padding: 10px; margin-top: 20px;">
-            <!-- Backend response will be inserted here -->
-        </div>
-
-        <div id="code-editor" style="height: 400px; border: 1px solid #ccc; margin-top: 20px;"></div>
-
-            <!-- Buttons: Run & Submit -->
-        <div class="code-buttons" style="margin-top: 10px;">
-            <button id="run-code-btn">Run Code</button>
-            <button id="submit-code-btn">Submit Code</button>
-        </div>
-        <!-- Tabs: Sample Test Case / Test Result -->
-       <div class="code-tabs">
-        <button class="tab-btn active" data-tab="sample-test">Sample Test Case</button>
-        <button class="tab-btn" data-tab="test-result">Test Result</button>
-        </div>
-
-        <!-- Tab Panels -->
-        <div class="tab-content">
-        <div id="sample-test" class="tab-panel active">
-            Sample Test Case Output...
-        </div>
-        <div id="test-result" class="tab-panel">
-            Test Result Output...
-        </div>
-        </div>
+        <div id="solve-prb"></div>
 </main>
     
 
