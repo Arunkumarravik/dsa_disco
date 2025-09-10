@@ -8,7 +8,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/python/python.min.js"></script>
   <script src="dsa_problem_ed_js.js" defer></script>
-
 </head>
 <body>
   <aside class="sidebar" id="sidebar">
@@ -79,38 +78,43 @@
     //const topic="array";
     document.getElementById("problem-title").innerText = `${title} (${topic})`;
 
-    async function get_problem_data(){
+  async function get_problem_data() {
+    params = new URLSearchParams(window.location.search);
+    const title = params.get("title");
 
-        const today=new Date()
-        const today_date=today.toLocaleDateString()
-        const problem_title="array_frequency_count"
-        params = new URLSearchParams(window.location.search);
-        const title = params.get("title");
+    const get_payload = {
+        "user_id": 1,
+        "problem_name": title
+    };
 
-        // Call backend API
-        get_payload={
-            "user_id"  : 1 ,
-            "problem_name" :  title
-        }
+    const payload = {
+        "event": "get",
+        "type": "problem",
+        "data": get_payload
+    };
 
-        payload={
-            "event" :  "get",
-            "type" :  "problem",
-            "data" :  get_payload
-        }
-
-        // Fetch problem description
-        const response=  await fetch('https://dsadiscobackend-214580149659.us-west1.run.app', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-
-        const data= await response.json()
-
-        return data
-
+    // First, check if localStorage already has data
+    const cached = localStorage.getItem(title);
+    if (cached) {
+        console.log("Loaded from localStorage");
+        return JSON.parse(cached);
     }
+
+    // Else, fetch from backend
+    const response = await fetch('https://dsadiscobackend-214580149659.us-west1.run.app', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    // Save to localStorage for future requests
+    localStorage.setItem(title, JSON.stringify(data));
+
+    return data;
+}
+
 
     (async () => {
     const json_data = await get_problem_data();

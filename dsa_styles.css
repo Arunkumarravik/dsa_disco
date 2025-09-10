@@ -448,3 +448,12 @@ main {
   position: relative;
   z-index: 10; /* ensures editor stays above everything */
 }
+
+/* Change keyword color */
+.cm-keyword { color: #e5167d !important; }
+
+/* Change string color */
+.cm-string { color: #0c9450 !important; }
+
+/* Change number color */
+.cm-number { color: #655618 !important; }

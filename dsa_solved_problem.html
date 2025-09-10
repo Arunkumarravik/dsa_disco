@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solved Problems</title>
+  <link rel="stylesheet" href="dsa_styles.css">
+  <style>
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      margin: 0;
+    }
+
+    .search-bar input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 250px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    table th, table td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    table th {
+      background: #eee;
+      font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .solve-btn {
+      background: #2196f3;
+      color: #fff;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .solve-btn:hover {
+      background: #1976d2;
+    }
+  </style>
+  <script src="dsa_solved_problem_js.js" defer></script>
+</head>
+<body>
+   <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
+    <nav>
+      <ul class="sidebar-menu">
+        <li class="menu-item active"><a href="dsa_home.html">Home</a></li>
+        <li class="menu-item"><a href="dsa_solve_problem.html">Solve Problem</a></li>
+        <li class="menu-item"><a href="dsa_solved_problem.html">Solved Problems</a></li>
+        <li class="menu-item"><a href="problem_list.html">Problems List</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Solved Problems</h1>
+      <button class="solve-btn" onclick="refreshProblems()">Refresh</button>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search problems...">
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Problem Name</th>
+          <th>Problem Topic</th>
+          <th>Solved Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="problems-table">
+        <!-- Rows will be inserted dynamically -->
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
