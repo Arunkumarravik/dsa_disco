@@ -2,6 +2,16 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getCurrentFormattedDate() {
+  const today = new Date();
+
+  const day = String(today.getDate()).padStart(2, "0");
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // months are 0-based
+  const year = today.getFullYear();
+
+  return `${day}-${month}-${year}`;
+}
+
 document.getElementById('get-problem-btn').addEventListener('click', async () => {
     const type = document.getElementById('problem-type').value;
     const topic = document.getElementById('dsa-topic').value;
@@ -9,8 +19,7 @@ document.getElementById('get-problem-btn').addEventListener('click', async () =>
     const user_id=1
     const user_name="Arun kumar R"
     const problem_id=getRandomInt(1, 100000)
-    const today=new Date()
-    const today_date=today.toLocaleDateString()
+    const today_date=getCurrentFormattedDate()
     // Call backend API
 
     title_payload={

@@ -26,13 +26,15 @@ function navigate(page) {
     `;
   }
   else if (page === "problem_list") {
-    content.innerHTML = `<h2>Problem List</h2><p>(Placeholder for problem list)</p>`;
+      const url = "dsa_problem_editor_page.html"
+      window.location.href = url;
   }
   else if (page === "solved_problems") {
     content.innerHTML = `<h2>Solved Problems</h2><p>(Placeholder for solved problems page)</p>`;
   }
   else if (page === "solve_problem") {
-    content.innerHTML = `<h2>Solve Problem</h2><p>(Placeholder for solving problems)</p>`;
+    const url = "dsa_solve_problem.html"
+    window.location.href = url;
   }
   else if (page === "profile") {
     content.innerHTML = `<h2>User Profile</h2><p>(Placeholder for profile info)</p>`;
